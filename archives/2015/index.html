@@ -8,7 +8,7 @@
 
 <title>
   
-    Archive: 2015
+    彙整: 2015
   
 </title>
 
@@ -78,21 +78,21 @@
           
             
               <li class="category-list-container">
-                <a href="javascript:;">Category</a>
+                <a href="javascript:;">類別</a>
                 
               </li>
             
           
             
               <li class="tag-list-container">
-                <a href="javascript:;">Tag</a>
+                <a href="javascript:;">標籤</a>
                 
               </li>
             
           
             
               <li class="archive-list-container">
-                <a href="javascript:;">Archive</a>
+                <a href="javascript:;">彙整</a>
                 <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/">2015</a><span class="archive-list-count">1</span></li></ul>
               </li>
             
@@ -181,165 +181,12 @@
       </div>
       <div class="article-entry">
         
-          <h1 id="JS和Jquery中的each-forEach-和-map的区别？"><a href="#JS和Jquery中的each-forEach-和-map的区别？" class="headerlink" title="JS和Jquery中的each/forEach 和 map的区别？"></a>JS和Jquery中的each/forEach 和 map的区别？</h1><h2 id="异同分析"><a href="#异同分析" class="headerlink" title="异同分析"></a>异同分析</h2><hr>
-<h3 id="各自方法"><a href="#各自方法" class="headerlink" title="各自方法"></a>各自方法</h3><ul>
-<li>JQuery 中的方法<ul>
-<li>$().each()  实例方法（对获取的元素使用each方法，JQ对象）</li>
-<li>$().map()</li>
-<li>$.each()  静态方法（对象和数组使用方法：JSON数据，二维数组等）</li>
-<li>$.map()  （数组和对象使用此方法）</li>
-</ul>
-</li>
-<li>JS原生中的方法（数组）<ul>
-<li>forEach()</li>
-<li>map()</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h3 id="兼容性"><a href="#兼容性" class="headerlink" title="兼容性"></a>兼容性</h3><ol>
-<li>JQ方法没有兼容性问题</li>
-<li><p>由于forEach()和map()都时ECMA5新增的数组方法，所以IE9以下浏览器不支持</p>
-<ol>
-<li>解决办法：利用原型继承<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">forEach</span>(<span class="params">arr,fn</span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span>(<span class="keyword">typeof</span> <span class="built_in">Array</span>.prototype.forEach != <span class="function"><span class="keyword">function</span>)</span>&#123;  </div><div class="line">        <span class="built_in">Array</span>.prototype.forEach = <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</div><div class="line">           <span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">0</span> ; i&lt;arr.length ;i++)&#123;</div><div class="line">                fn(arr[i],i)</div><div class="line">          &#125;</div><div class="line">        &#125;  </div><div class="line">      &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<hr>
-<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3></li>
-<li>JQ的方法（当只有一个参数时指的是参数1）<ul>
-<li>$().each()里面的匿名函数支持2个参数 (i,v)<ul>
-<li>数组：参数1–索引；参数2–当前项  </li>
-<li>对象：参数1–键；参数2–值<ul>
-<li>$().map()里面的匿名函数支持2个参数 (i,v)</li>
-</ul>
-</li>
-<li>数组：参数1–索引；参数2–当前项  </li>
-<li>对象：参数1–键；参数2–值</li>
-</ul>
-</li>
-<li>$.each()中的匿名函数支持2个参数 (i,v)<ul>
-<li>数组：参数1–索引；参数2–当前项  </li>
-<li>对象：参数1–键；参数2–值</li>
-</ul>
-</li>
-<li>$.map()中的匿名函数支持2个参数 (v,i)<ul>
-<li>数组：参数1–当前项；参数2–索引  </li>
-<li>对象：参数1–值；参数2–键</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>JS的方法（当只有一个参数时指的是参数1）<ul>
-<li>forEach()里面的匿名函数支持3个参数 (v,i)<ul>
-<li>数组：参数1–当前项；参数2–索引；参数3–当前数组</li>
-</ul>
-</li>
-<li>map()里面的匿名函数支持3个参数 (v,i)<ul>
-<li>数组：参数1–当前项；参数2–索引；参数3–当前数组</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>为什么参数有(v,i)和(i,v)之分？<ul>
-<li>总的来说为了使用方便</li>
-<li>参数为(v,i)的匿名函数中的this指向windows对象，又因为索引值i不常用，所以用(v,i)，当不用索引时可以省略i</li>
-<li>参数为(i,v)的匿名函数中的this指向遍历的每一项，所以可以用this代替参数v，因此用(i,v)，this代替V使用时可以<br>省略参数v</li>
-</ul>
-</li>
-</ol>
-<hr>
-<h3 id="返回值"><a href="#返回值" class="headerlink" title="返回值"></a>返回值</h3><ul>
-<li><p>JQ的方法</p>
-<ul>
-<li>$().each() 没有返回值</li>
-<li>$.each() 没有返回值</li>
-<li>$().map() 有返回值</li>
-<li><p>$.map() 有返回值，可以return出来（返回新数组），对原数组没有影响。</p>
-<pre><code>注意：如果map的返回值为null/undefined不会添加到新数组中
-
-var arr = [1,2,3,4,5,6,6,78,9,0,123];
-var $arr = $.map(arr,function (v,i){
-       console.log(this) //指向windows对象
-       return v*2;
-   })
-   console.log(arr)  //原数组
-   console.log($arr)  //返回新数组，有返回值
-
-var $Arr = $.each(arr,function (i,v){
-       console.log(this)  //指向遍历的项，当为基本数据类型时，this类型为基本包装对象
-       return v*2;
-   })
-   console.log(arr)  //输出原数组
-   console.log($Arr)  //输出原数组与写的返回值不相等，所以保存了原数组，没有返回值
-
-var $div = $(&apos;div&apos;).each(function(i,v){
-       console.log(this);  //指向遍历的项
-       return function(){};
-   })
-   console.log($div)  //输出原伪数组与返回的函数不一样，所以保存了原伪数组，没有返回值
-
-var $div = $(&apos;div&apos;).map(function (i,v){
-       console.log(this);  //指向遍历的项
-       return function (){};
-   })
-   console.log($div); //返回新的伪数组，有返回值（以原型式保存的返回值）
-</code></pre></li>
-</ul>
-</li>
-<li><p>JS的方法</p>
-<ul>
-<li>forEach() 没有返回值</li>
-<li><p>map() 有返回值，可以return 返回新数组，对原来数组无影响。</p>
-<pre><code>注意：callback 每次执行后的返回值（包括 undefined）组合起来形成一个新数组。 
-
-callback 函数只会在有值的索引上被调用；那些从来没被赋过值或者使用 delete 删除的索引则不会被调用。
-
-var arr = [1,2,3,4,5,6,6,78,9,0,123];
-var Arr = arr.forEach(function (v,i) {
-            return v*2
-         });
-        console.log(Arr) //结果是undefined
-var array = arr.map(function (v,i){
-            return v*2
-         });
-        console.log(arr)  //结果是原数组
-        console.log(array)  //结果是新数组
-</code></pre></li>
-</ul>
-</li>
-</ul>
-<hr>
-<h3 id="this-的指向问题"><a href="#this-的指向问题" class="headerlink" title="this 的指向问题"></a>this 的指向问题</h3><ul>
-<li>JQ方法<ul>
-<li>参数为(i,v)的$.each()/$().each()/$().map() 中的this指向遍历的每一项，当为基本数据类型是，this的类型是基本包装对象(数值，字符串，布尔)；当为对象/函数时，this就是对应的对象/函数。</li>
-<li>参数为(v,i)的$.map() 中的this指向windows对象</li>
-</ul>
-</li>
-<li>JS中的this 指向windows对象</li>
-</ul>
-<hr>
-<h3 id="中断循环"><a href="#中断循环" class="headerlink" title="中断循环"></a>中断循环</h3><ul>
-<li>jq   <ul>
-<li>$.each() 在回调函数中设置设置  return false（具体为啥，看上面的源码）</li>
-<li>$.map()  应该不能中断循环（个人看源码的猜测，有待验证）</li>
-</ul>
-</li>
-<li>js <ul>
-<li>没有办法中止或者跳出 forEach 循环，除了抛出一个异常。如果你需要这样，使用forEach()方法是错误的，你可以用一个简单的循环作为替代。</li>
-<li>如果您正在测试一个数组里的元素是否符合某条件，且需要返回一个布尔值，那么可使用 Array.every(遍历数组中每一项) 或 Array.some（遍历数组中项，一旦又满足条件的就停止遍历）。</li>
-<li>如果可用，新方法 find() 或者findIndex() 也可被用于真值测试的提早终止。（MDN权威说的）</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h3 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h3><ul>
-<li>js map forEach方法<ul>
-<li>使用 map 方法处理数组时，数组元素的范围是在 callback 方法第一次调用之前就已经确定了。在 map 方法执行的过程中：原数组中新增加的元素将不会被 callback 访问到；若已经存在的元素被改变或删除了，则它们的传递到 callback 的值是 map 方法遍历到它们的那一时刻的值；而被删除的元素将不会被访问到。</li>
-<li>forEach同上</li>
-</ul>
-</li>
-</ul>
-
+          <h1 id="JS和Jquery中的each-forEach-和-map的区别？"><a href="#JS和Jquery中的each-forEach-和-map的区别？" class="headerlink" title="JS和Jquery中的each/forEach 和 map的区别？"></a>JS和Jquery中的each/forEach 和 map的区别？</h1>
+          <p>
+            <a href="/2015/03/24/foreach&map/">
+              閱讀全文
+            </a>
+          </p>
         
       </div>
     </div>
