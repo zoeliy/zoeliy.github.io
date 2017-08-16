@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<title>
+  
+    MyLibrary
+  
+</title>
+
+<meta name="description" content="http与https">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MyLibrary">
+<meta property="og:url" content="http://yoursite.com/2015/04/28/http与https/index.html">
+<meta property="og:site_name" content="MyLibrary">
+<meta property="og:description" content="http与https">
+<meta property="og:locale" content="zn-CN">
+<meta property="og:image" content="http://pic002.cnblogs.com/images/2012/339704/2012071410212142.gif">
+<meta property="og:updated_time" content="2017-08-16T14:36:40.088Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MyLibrary">
+<meta name="twitter:description" content="http与https">
+<meta name="twitter:image" content="http://pic002.cnblogs.com/images/2012/339704/2012071410212142.gif">
+
+
+  <link rel="alternative" href="/atom.xml" title="MyLibrary" type="application/atom+xml">
+
+
+
+  <link rel="icon" href="/favicon.png">
+
+
+<link rel="stylesheet" href="/perfect-scrollbar/css/perfect-scrollbar.min.css">
+<link rel="stylesheet" href="/styles/main.css">
+
+
+
+
+
+
+</head>
+<body
+  
+    class="monochrome"
+  
+  >
+  <div class="mobile-header">
+  <button class="sidebar-toggle" type="button">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+  <a class="title" href="/">MyLibrary</a>
+</div>
+
+  <div class="main-container">
+    <div class="sidebar">
+  <div class="header">
+    <h1 class="title"><a href="/">MyLibrary</a></h1>
+    
+    <div class="info">
+      <div class="content">
+        
+        
+          <div class="author">zoeliy</div>
+        
+      </div>
+      
+        <div class="avatar">
+          
+            <a href="/about"><img src="http://img.zcool.cn/community/036bbf755de812b00000110f1ca18e2.jpg"></a>
+          
+        </div>
+      
+    </div>
+  </div>
+  <div class="body">
+    
+      
+        <ul class="nav">
+          
+            
+              <li class="category-list-container">
+                <a href="javascript:;">分类</a>
+                
+              </li>
+            
+          
+            
+              <li class="tag-list-container">
+                <a href="javascript:;">标签</a>
+                
+              </li>
+            
+          
+            
+              <li class="archive-list-container">
+                <a href="javascript:;">归档</a>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/">2015</a><span class="archive-list-count">5</span></li></ul>
+              </li>
+            
+          
+        </ul>
+      
+        <ul class="nav">
+          
+            
+              <li>
+                <a href="/" title="主页">主页</a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/archives" title="年份">年份</a>
+              </li>
+            
+          
+        </ul>
+      
+        <ul class="nav">
+          
+            
+              <li>
+                <a href="https://github.com/denjones/hexo-theme-chan" title="Chan" target="_blank" rel="external">Chan</a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="https://github.com/denjones" title="Github" target="_blank" rel="external">Github</a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/atom.xml" title="RSS">RSS</a>
+              </li>
+            
+          
+        </ul>
+      
+    
+  </div>
+</div>
+
+    <div class="main-content">
+      
+        <div style="max-width: 1000px">
+      
+          <article id="post-http与https" class="article article-type-post">
+  
+  
+
+  <div class="article-info">
+    <span class="article-date">
+  2015-04-28
+</span>
+
+    
+
+    
+
+  </div>
+  <div class="article-entry">
+    <h1 id="http与https"><a href="#http与https" class="headerlink" title="http与https"></a>http与https</h1><a id="more"></a>
+<hr>
+<h1 id="http-Hypertext-Transfer-Protocal-超文本传输协议"><a href="#http-Hypertext-Transfer-Protocal-超文本传输协议" class="headerlink" title="http(Hypertext Transfer Protocal 超文本传输协议)"></a>http(Hypertext Transfer Protocal 超文本传输协议)</h1><h2 id="简介："><a href="#简介：" class="headerlink" title="简介："></a>简介：</h2><p>HTTP是一个属于应用层的面向对象的协议，是一个基于请求与响应模式的、无状态的、应用层的协议，常基于TCP的连接方式，绝大多数的Web开发，都是构建在HTTP协议之上的Web应用。HTTP协议的主要特点可概括如下：</p>
+<ol>
+<li>支持客户/服务器模式。</li>
+<li>简单快速：客户向服务器请求服务时，只需传送请求方法和路径。请求方法常用的有GET、HEAD、POST。每种方法规定了客户与服务器联系的类型不同。由于HTTP协议简单，使得HTTP服务器的程序规模小，因而通信速度很快。</li>
+<li>灵活：HTTP允许传输任意类型的数据对象。正在传输的类型由Content-Type加以标记。</li>
+<li>无连接：无连接的含义是限制每次连接只处理一个请求。服务器处理完客户的请求，并收到客户的应答后，即断开连接。采用这种方式可以节省传输时间。</li>
+<li>无状态：HTTP协议是无状态协议。无状态是指协议对于事务处理没有记忆能力。缺少状态意味着如果后续处理需要前面的信息，则它必须重传，这样可能导致每次连接传送的数据量增大。另一方面，在服务器不需要先前信息时它的应答就较快。</li>
+</ol>
+<hr>
+<h2 id="URL"><a href="#URL" class="headerlink" title="URL"></a>URL</h2><p>HTTP URL (URL是一种特殊类型的URI，包含了用于查找某个资源的足够的信息)的格式如下：</p>
+<p><a href="http://host[&quot;:&quot;port][abs_path" target="_blank" rel="external">http://host[&quot;:&quot;port][abs_path</a>]</p>
+<ul>
+<li>http表示要通过HTTP协议来定位网络资源；</li>
+<li>host表示合法的Internet主机域名或者IP地址；</li>
+<li>port指定一个端口号，为空则使用缺省端口80；</li>
+<li>abs_path指定请求资源的URI；如果URL中没有给出abs_path，那么当它作为请求URI时，必须以“/”的形式给出，通常这个工作浏览器自动帮我们完成。</li>
+<li>eg:<ol>
+<li>输入：www.guet.edu.cn  浏览器自动转换成：<a href="http://www.guet.edu.cn/" target="_blank" rel="external">http://www.guet.edu.cn/</a></li>
+<li>http:192.168.0.116:8080/index.jsp</li>
+</ol>
+</li>
+</ul>
+<hr>
+<h2 id="请求篇"><a href="#请求篇" class="headerlink" title="请求篇"></a>请求篇</h2><p>http请求由三部分组成，分别是：请求行（request line）、请求报头(headers)、请求正文(request-body)。</p>
+<ol>
+<li>请求行</li>
+</ol>
+<ul>
+<li><p>请求行以一个方法符号开头，以空格分开，后面跟着请求的URI和协议的版本，格式如下：Method Request-URI HTTP-Version CRLF  </p>
+<ul>
+<li><p>Method表示请求方法，基本请求方法（查，改，增，删）；</p>
+<ol>
+<li>GET　　　　请求获取Request-URI所标识的资源</li>
+<li>POST　　　 在Request-URI所标识的资源后附加新的数据</li>
+<li>PUT　　　　请求服务器存储一个资源，并用Request-URI作为其标识</li>
+<li>DELETE　　 请求服务器删除Request-URI所标识的资源</li>
+</ol>
+</li>
+<li><p>Request-URI是一个统一资源标识符（请求地址）；</p>
+</li>
+<li><p>HTTP-Version表示请求的HTTP协议版本；CRLF表示回车和换行（除了作为结尾的CRLF外，不允许出现单独的CR或LF字符）。</p>
+</li>
+</ul>
+</li>
+<li><p>get 和 post的区别</p>
+<ul>
+<li><p>实现功能不一样：GET一般用于获取/查询资源信息，而POST一般用于更新资源信息</p>
+</li>
+<li><p>GET提交，请求的数据会附在URL之后（就是把数据放置在HTTP协议头中），以?分割URL和传输数据，多个参数用&amp;连接。如果数据是英文字母/数字，原样发送，如果是空格，转换为+，如果是中文/其他字符，则直接把字符串用BASE64加密，得出如：%E4%BD%A0%E5%A5%BD，其中％XX中的XX为该符号以16进制表示的ASCII。POST提交：把提交的数据放置在是HTTP包的包体中。因此，GET提交的数据会在地址栏中显示出来，而POST提交，地址栏不会改变。</p>
+</li>
+<li><p>传输数据的大小：首先声明：HTTP协议没有对传输的数据大小进行限制，HTTP协议规范也没有对URL长度进行限制。</p>
+<p>而在实际开发中存在的限制主要有：</p>
+<ul>
+<li><p>GET:特定浏览器和服务器对URL长度有限制，例如 IE对URL长度的限制是2083字节(2K+35)。对于其他浏览器，如Netscape、FireFox等，理论上没有长度限制，其限制取决于操作系统的支持。因此对于GET提交时，传输数据就会受到URL长度的限制。</p>
+</li>
+<li><p>POST:由于不是通过URL传值，理论上数据不受 限。但实际各个WEB服务器会规定对post提交数据大小进行限制，Apache、IIS6都有各自的配置。</p>
+</li>
+</ul>
+</li>
+<li><p>安全性：</p>
+<p>POST的安全性要比GET的安全性高。因为通过GET提交数据，用户名和密码将明文出现在URL上：</p>
+<ul>
+<li>(1)登录页面有可能被浏览器缓存</li>
+<li>(2)其他人查看浏览器的历史纪录，那么别人就可以拿到你的账号和密码了</li>
+<li>(3)使用GET提交数据还可能会造成Cross-site request forgery攻击</li>
+</ul>
+</li>
+<li><p>请求参数位置不同</p>
+<ul>
+<li><p>1）get：请求参数是作为一个key/value对的序列（查询字符串）附加到URL上的<br>查询字符串的长度受到web浏览器和web服务器的限制（如IE最多支持2048个字符），不适合传输大型数据集同时，它很不安全</p>
+</li>
+<li><p>2）post：请求参数是在http标题的一个不同部分（名为entity body）传输的，这一部分用来传输表单信息，因此必须将           Content-type设置为:application/x-www-form- urlencoded。post设计用来支持web窗体上的用户字段，其参数也是作为        key/value对传输。但是：它不支持复杂数据类型，因为post没有定义传输数据结构的语义和规则。</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>额外：HEAD请求方法与GET方法几乎是一样的，对于HEAD请求的回应部分来说，它的HTTP头部中包含的信息与通过GET请求所得到的信息是相同的。利用这个方法，不必传输整个资源内容，就可以得到Request-URI所标识的资源的信息。该方法常用于测试超链接的有效性，是否可以访问，以及最近是否更新。</p>
+</li>
+</ul>
+<hr>
+<h2 id="响应篇"><a href="#响应篇" class="headerlink" title="响应篇"></a>响应篇</h2><p>在接收和解释请求消息后，服务器返回一个HTTP响应消息。HTTP响应也是由三个部分组成，分别是：响应行、响应报头、响应正文</p>
+<ol>
+<li><p>响应行</p>
+<ul>
+<li><p>响应行格式如下：HTTP-Version Status-Code Reason-Phrase CRLF</p>
+<ul>
+<li>HTTP-Version表示服务器HTTP协议的版本</li>
+<li>Status-Code表示服务器发回的响应状态代码</li>
+<li>Reason-Phrase表示状态代码的文本描述</li>
+</ul>
+</li>
+<li><p>状态代码有三位数字组成，第一个数字定义了响应的类别，且有五种可能取值：</p>
+<ul>
+<li>1xx：指示信息–表示请求已接收，继续处理</li>
+<li>2xx：成功–表示请求已被成功接收、理解、接受</li>
+<li>3xx：重定向–要完成请求必须进行更进一步的操作</li>
+<li>4xx：客户端错误–请求有语法错误或请求无法实现</li>
+<li>5xx：服务器端错误–服务器未能实现合法的请求</li>
+</ul>
+</li>
+<li><p>常见状态代码、状态描述、说明：</p>
+<ul>
+<li>200 OK      //客户端请求成功</li>
+<li>400 Bad Request  //客户端请求有语法错误，不能被服务器所理解</li>
+<li>401 Unauthorized //请求未经授权，这个状态代码必须和WWW-Authenticate报头域一起使用 </li>
+<li>403 Forbidden  //服务器收到请求，但是拒绝提供服务</li>
+<li>404 Not Found  //请求资源不存在，eg：输入了错误的URL</li>
+<li>500 Internal Server Error //服务器发生不可预期的错误</li>
+<li>503 Server Unavailable  //服务器当前不能处理客户端的请求，一段时间后可能恢复正常</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>响应正文就是服务器返回的资源的内容</p>
+</li>
+</ol>
+<hr>
+<h1 id="https"><a href="#https" class="headerlink" title="https"></a>https</h1><h2 id="简介：-1"><a href="#简介：-1" class="headerlink" title="简介："></a>简介：</h2><p>HTTPS (Hypertext Transfer Protocol over Secure Socket Layer，基于SSL的HTTP协议) 使用了HTTP协议，但HTTPS使用不同于HTTP协议的默认端口及一个加密、身份验证层（HTTP与TCP之间）。这个协议的最初研发由网景公司进行，提供了身份验证与加密通信方法，现在它被广泛用于互联网上安全敏感的通信。</p>
+<ul>
+<li><p>客户端在使用HTTPS方式与Web服务器通信时有以下几个步骤，如图所示。</p>
+<ol>
+<li>客户使用https的URL访问Web服务器，要求与Web服务器建立SSL连接。</li>
+<li>Web服务器收到客户端请求后，会将网站的证书信息（证书中包含公钥）传送一份给客户端。</li>
+<li>客户端的浏览器与Web服务器开始协商SSL连接的安全等级，也就是信息加密的等级。</li>
+<li>客户端的浏览器根据双方同意的安全等级，建立会话密钥，然后利用网站的公钥将会话密钥加密，并传送给网站。</li>
+<li>Web服务器利用自己的私钥解密出会话密钥。</li>
+<li>Web服务器利用会话密钥加密与客户端之间的通信。</li>
+</ol>
+</li>
+</ul>
+<p><img src="http://pic002.cnblogs.com/images/2012/339704/2012071410212142.gif" alt="插入图片" title="原理图"></p>
+
+  </div>
+  <footer class="article-footer">
+    
+  <div class="cc">
+    <a href="http://creativecommons.org/licenses/by-sa/4.0/deed.z" target="_blank" title="署名-相同方式共享">
+      <img src="/images/cc/cc.png">
+      
+          <img src="/images/cc/by.png">
+        
+          <img src="/images/cc/sa.png">
+      
+      <span>
+        本作品采用知识共享 署名-相同方式共享 4.0 国际许可协议进行许可。
+      </span>
+    </a>
+  </div>
+
+
+    
+
+  </footer>
+</article>
+
+
+
+
+
+
+
+          <div class="main-footer">
+  
+    © 2017 MyLibrary - Powered by <a href="http://hexo.io" target="_blank">Hexo</a> - Theme <a href="https://github.com/denjones/hexo-theme-chan" target="_blank">Chan</a>
+  
+</div>
+
+      
+        </div>
+      
+    </div>
+  </div>
+  <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="/PhotoSwipe/photoswipe.css">
+  <link rel="stylesheet" href="/PhotoSwipe/default-skin/default-skin.css">
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+  <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+             It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+      <!-- Container that holds slides.
+                PhotoSwipe keeps only 3 of them in the DOM to save memory.
+                Don't modify these 3 pswp__item elements, data is added later on. -->
+      <div class="pswp__container">
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+      </div>
+
+      <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+      <div class="pswp__ui pswp__ui--hidden">
+
+        <div class="pswp__top-bar">
+
+          <!--  Controls are self-explanatory. Order can be changed. -->
+
+          <div class="pswp__counter"></div>
+
+          <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+          <button class="pswp__button pswp__button--share" title="Share"></button>
+
+          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+          <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+          <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+          <!-- element will get class pswp__preloader--active when preloader is running -->
+          <div class="pswp__preloader">
+            <div class="pswp__preloader__icn">
+              <div class="pswp__preloader__cut">
+                <div class="pswp__preloader__donut"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+          <div class="pswp__share-tooltip"></div>
+        </div>
+
+        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+
+        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+
+        <div class="pswp__caption">
+          <div class="pswp__caption__center"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/PhotoSwipe/photoswipe.js"></script>
+  <script src="/PhotoSwipe/photoswipe-ui-default.js"></script>
+
+
+<script src="/perfect-scrollbar/js/min/perfect-scrollbar.min.js"></script>
+<script src="/scripts/main.js"></script>
+
+</body>
+</html>
