@@ -8,17 +8,21 @@
 
 <title>
   
-    彙整: 2015
+    MyLibrary
   
 </title>
 
-<meta property="og:type" content="website">
+<meta name="description" content="数组排序 var arr = [1,3,2,4,6,5,8,67,23,13,9]  第一种方法：循环比较前后项1234567891011var ppp;for(var i=0;i&amp;lt;arr.length;i++)&amp;#123;  //遍历数组中每一项        for(var j=i+1;j&amp;lt;arr.length;j++)&amp;#123;  //与后面的每一项比较">
+<meta property="og:type" content="article">
 <meta property="og:title" content="MyLibrary">
-<meta property="og:url" content="http://yoursite.com/archives/2015/index.html">
+<meta property="og:url" content="http://yoursite.com/2015/05/27/数组排序/index.html">
 <meta property="og:site_name" content="MyLibrary">
+<meta property="og:description" content="数组排序 var arr = [1,3,2,4,6,5,8,67,23,13,9]  第一种方法：循环比较前后项1234567891011var ppp;for(var i=0;i&amp;lt;arr.length;i++)&amp;#123;  //遍历数组中每一项        for(var j=i+1;j&amp;lt;arr.length;j++)&amp;#123;  //与后面的每一项比较">
 <meta property="og:locale" content="zn-CN">
+<meta property="og:updated_time" content="2017-09-02T13:40:12.365Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MyLibrary">
+<meta name="twitter:description" content="数组排序 var arr = [1,3,2,4,6,5,8,67,23,13,9]  第一种方法：循环比较前后项1234567891011var ppp;for(var i=0;i&amp;lt;arr.length;i++)&amp;#123;  //遍历数组中每一项        for(var j=i+1;j&amp;lt;arr.length;j++)&amp;#123;  //与后面的每一项比较">
 
 
   <link rel="alternative" href="/atom.xml" title="MyLibrary" type="application/atom+xml">
@@ -146,43 +150,22 @@
       
         <div style="max-width: 1000px">
       
-          
-
+          <article id="post-数组排序" class="article article-type-post">
   
   
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <h1><a href="/archives/2015" class="archive-year">2015</a></h1>
-        </div>
-        <div class="post-list">
-    
-  
 
-    <div class="post-list-item article">
-      <h3 class="article-header">
-        <a href="/2015/05/27/数组排序/" >
-  
-</a>
-
-      </h3>
-      
-
-      <div class="article-info">
-        <a href="/2015/05/27/数组排序/"><span class="article-date">
+  <div class="article-info">
+    <span class="article-date">
   2015-05-27
 </span>
-</a>
-        
 
-        
+    
 
-      </div>
-      <div class="article-entry">
-        
-          <h1 id="数组排序"><a href="#数组排序" class="headerlink" title="数组排序"></a>数组排序</h1><blockquote>
+    
+
+  </div>
+  <div class="article-entry">
+    <h1 id="数组排序"><a href="#数组排序" class="headerlink" title="数组排序"></a>数组排序</h1><blockquote>
 <pre><code>var arr = [1,3,2,4,6,5,8,67,23,13,9]
 </code></pre><hr>
 <h3 id="第一种方法：循环比较前后项"><a href="#第一种方法：循环比较前后项" class="headerlink" title="第一种方法：循环比较前后项"></a>第一种方法：循环比较前后项</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> ppp;</div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;arr.length;i++)&#123;  <span class="comment">//遍历数组中每一项</span></div><div class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> j=i+<span class="number">1</span>;j&lt;arr.length;j++)&#123;  <span class="comment">//与后面的每一项比较</span></div><div class="line">            <span class="keyword">if</span>(arr[i]&gt;arr[j])&#123;  <span class="comment">//若当前项大于后项，则调换位置</span></div><div class="line">                ppp = arr[i];</div><div class="line">                arr[i]=arr[j];</div><div class="line">                arr[j]=ppp;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"><span class="built_in">console</span>.log(arr)</div></pre></td></tr></table></figure>
@@ -209,245 +192,29 @@
 <hr>
 <h3 id="第四种方法：利用对象自动排序-仅限于没有重复的数组"><a href="#第四种方法：利用对象自动排序-仅限于没有重复的数组" class="headerlink" title="第四种方法：利用对象自动排序(仅限于没有重复的数组)"></a>第四种方法：利用对象自动排序(仅限于没有重复的数组)</h3><p>此方法去重，排序一次完成<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> newarr = [];</div><div class="line"><span class="keyword">var</span> obj = &#123;&#125;;</div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;arr.length;i++)&#123;</div><div class="line">        obj[arr[i]]=<span class="number">1</span>;</div><div class="line">   &#125;</div><div class="line"><span class="built_in">console</span>.log(obj)</div><div class="line"><span class="keyword">for</span>(key <span class="keyword">in</span> obj)&#123;</div><div class="line">        newarr.push(key<span class="number">-0</span>)</div><div class="line">   &#125;</div><div class="line"><span class="built_in">console</span>.log(newarr)</div></pre></td></tr></table></figure></p>
 
-        
-      </div>
-    </div>
-
-  
-
-  
-  
+  </div>
+  <footer class="article-footer">
     
-  
-
-    <div class="post-list-item article">
-      <h3 class="article-header">
-        <a href="/2015/05/24/数组去重/" >
-  
-</a>
-
-      </h3>
+  <div class="cc">
+    <a href="http://creativecommons.org/licenses/by-sa/4.0/deed.z" target="_blank" title="姓名標示-相同方式分享">
+      <img src="/images/cc/cc.png">
       
-
-      <div class="article-info">
-        <a href="/2015/05/24/数组去重/"><span class="article-date">
-  2015-05-24
-</span>
-</a>
+          <img src="/images/cc/by.png">
         
+          <img src="/images/cc/sa.png">
+      
+      <span>
+        本著作係採用創用 CC 姓名標示-相同方式分享 4.0 國際 授權條款授權.
+      </span>
+    </a>
+  </div>
 
-        
 
-      </div>
-      <div class="article-entry">
-        
-          <h1 id="数组去重"><a href="#数组去重" class="headerlink" title="数组去重"></a>数组去重</h1><blockquote>
-<pre><code>设值一个数组 var arr = [1,45,3,5,2,5,1,6,7,3,32,25]
-</code></pre><hr>
-<h3 id="第一种方法：原数组当前项与新数组的每一项比较"><a href="#第一种方法：原数组当前项与新数组的每一项比较" class="headerlink" title="第一种方法：原数组当前项与新数组的每一项比较"></a>第一种方法：原数组当前项与新数组的每一项比较</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> newarr = [<span class="number">1</span>];  <span class="comment">//声明一个新数组用来保存新数组,先保存原数组的第一项</span></div><div class="line"><span class="comment">// 遍历数组的每一项与新数组项比较，如果不相等则保存到新数组中，若想等则跳过</span></div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;num.length;i++)&#123;</div><div class="line">    <span class="keyword">var</span> mid = num[i];</div><div class="line">    <span class="keyword">var</span> bool = <span class="literal">false</span>;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> j=<span class="number">0</span>;j&lt;newarr.length;j++)&#123;</div><div class="line">        <span class="comment">// 判断是否相等</span></div><div class="line">        <span class="keyword">if</span>(mid == newarr[j])&#123;</div><div class="line">            bool = <span class="literal">true</span>;</div><div class="line">            <span class="keyword">break</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">if</span>(!bool)&#123;</div><div class="line">        newarr.push(mid)</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(newarr)</div></pre></td></tr></table></figure>
-</blockquote>
-<hr>
-<h3 id="第二种方法：先排序，此项与后项比较，若相等跳过，不相等取出"><a href="#第二种方法：先排序，此项与后项比较，若相等跳过，不相等取出" class="headerlink" title="第二种方法：先排序，此项与后项比较，若相等跳过，不相等取出"></a>第二种方法：先排序，此项与后项比较，若相等跳过，不相等取出</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">num.sort(<span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> a-b;</div><div class="line">&#125;)</div><div class="line"><span class="keyword">var</span> newarr = [];    <span class="comment">//用来保存不重项</span></div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;num.length;i++)&#123;</div><div class="line">    <span class="keyword">if</span>(num[i]!=num[i+<span class="number">1</span>])&#123;</div><div class="line">        newarr.push(num[i])</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(newarr)</div></pre></td></tr></table></figure>
-<hr>
-<h3 id="第三种方法：利用对象的属性查询"><a href="#第三种方法：利用对象的属性查询" class="headerlink" title="第三种方法：利用对象的属性查询"></a>第三种方法：利用对象的属性查询</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> newarr = [];</div><div class="line"><span class="keyword">var</span> obj = &#123;&#125;;</div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;num.length;i++)&#123;</div><div class="line">    <span class="comment">// 将数组中的项当做key再配value保存在对象中，查询对象是否有此属性</span></div><div class="line">    <span class="comment">// 若没有则保存到数组和对象中</span></div><div class="line">    <span class="keyword">if</span>(!obj[num[i]])&#123;   <span class="comment">//判断key对应的值是否存在</span></div><div class="line">        newarr.push(num[i]);</div><div class="line">        obj[num[i]] = <span class="number">1</span>;     <span class="comment">//此处必须要求每个key对应的值是一样的</span></div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(newarr);</div><div class="line"><span class="built_in">console</span>.log(obj)</div></pre></td></tr></table></figure>
-<hr>
-<h3 id="第四种：利用索引查询"><a href="#第四种：利用索引查询" class="headerlink" title="第四种：利用索引查询"></a>第四种：利用索引查询</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> newarr = [<span class="number">1</span>];</div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;num.length;i++)&#123;</div><div class="line">    <span class="comment">// 查看项在新数组中的索引值，若为-1则表示不存在，保存到新数组中</span></div><div class="line">    <span class="keyword">if</span>(newarr.indexOf(num[i])==<span class="number">-1</span>)&#123;</div><div class="line">        newarr.push(num[i])</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(newarr)</div></pre></td></tr></table></figure>
-
-        
-      </div>
-    </div>
-
-  
-
-  
-  
     
-  
 
-    <div class="post-list-item article">
-      <h3 class="article-header">
-        <a href="/2015/04/28/http与https/" >
-  
-</a>
+  </footer>
+</article>
 
-      </h3>
-      
-
-      <div class="article-info">
-        <a href="/2015/04/28/http与https/"><span class="article-date">
-  2015-04-28
-</span>
-</a>
-        
-
-        
-
-      </div>
-      <div class="article-entry">
-        
-          <h1 id="http与https"><a href="#http与https" class="headerlink" title="http与https"></a>http与https</h1>
-          <p>
-            <a href="/2015/04/28/http与https/">
-              閱讀全文
-            </a>
-          </p>
-        
-      </div>
-    </div>
-
-  
-
-  
-  
-    
-  
-
-    <div class="post-list-item article">
-      <h3 class="article-header">
-        <a href="/2015/04/24/css盒子模型整理/" >
-  
-</a>
-
-      </h3>
-      
-
-      <div class="article-info">
-        <a href="/2015/04/24/css盒子模型整理/"><span class="article-date">
-  2015-04-24
-</span>
-</a>
-        
-
-        
-
-      </div>
-      <div class="article-entry">
-        
-          <h1 id="css盒子模型整理"><a href="#css盒子模型整理" class="headerlink" title="css盒子模型整理"></a>css盒子模型整理</h1>
-          <p>
-            <a href="/2015/04/24/css盒子模型整理/">
-              閱讀全文
-            </a>
-          </p>
-        
-      </div>
-    </div>
-
-  
-
-  
-  
-    
-  
-
-    <div class="post-list-item article">
-      <h3 class="article-header">
-        <a href="/2015/04/07/MARKDOWN编写/" >
-  
-</a>
-
-      </h3>
-      
-
-      <div class="article-info">
-        <a href="/2015/04/07/MARKDOWN编写/"><span class="article-date">
-  2015-04-07
-</span>
-</a>
-        
-
-        
-
-      </div>
-      <div class="article-entry">
-        
-          <h1 id="markdown文件编写整理"><a href="#markdown文件编写整理" class="headerlink" title="markdown文件编写整理"></a>markdown文件编写整理</h1>
-          <p>
-            <a href="/2015/04/07/MARKDOWN编写/">
-              閱讀全文
-            </a>
-          </p>
-        
-      </div>
-    </div>
-
-  
-
-  
-  
-    
-  
-
-    <div class="post-list-item article">
-      <h3 class="article-header">
-        <a href="/2015/03/30/搭建hexo blog/" >
-  
-</a>
-
-      </h3>
-      
-
-      <div class="article-info">
-        <a href="/2015/03/30/搭建hexo blog/"><span class="article-date">
-  2015-03-30
-</span>
-</a>
-        
-
-        
-
-      </div>
-      <div class="article-entry">
-        
-          <h1 id="如何搭建hexo博客"><a href="#如何搭建hexo博客" class="headerlink" title="如何搭建hexo博客"></a>如何搭建hexo博客</h1>
-          <p>
-            <a href="/2015/03/30/搭建hexo blog/">
-              閱讀全文
-            </a>
-          </p>
-        
-      </div>
-    </div>
-
-  
-
-  
-  
-    
-  
-
-    <div class="post-list-item article">
-      <h3 class="article-header">
-        <a href="/2015/03/24/foreach&map/" >
-  
-</a>
-
-      </h3>
-      
-
-      <div class="article-info">
-        <a href="/2015/03/24/foreach&map/"><span class="article-date">
-  2015-03-24
-</span>
-</a>
-        
-
-        
-
-      </div>
-      <div class="article-entry">
-        
-          <h1 id="JS和Jquery中的each-forEach-和-map的区别？"><a href="#JS和Jquery中的each-forEach-和-map的区别？" class="headerlink" title="JS和Jquery中的each/forEach 和 map的区别？"></a>JS和Jquery中的each/forEach 和 map的区别？</h1>
-          <p>
-            <a href="/2015/03/24/foreach&map/">
-              閱讀全文
-            </a>
-          </p>
-        
-      </div>
-    </div>
-
-  
 
 
 

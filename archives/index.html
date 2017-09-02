@@ -94,7 +94,7 @@
             
               <li class="archive-list-container">
                 <a href="javascript:;">彙整</a>
-                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/">2015</a><span class="archive-list-count">5</span></li></ul>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/">2015</a><span class="archive-list-count">7</span></li></ul>
               </li>
             
           
@@ -158,6 +158,109 @@
           <h1><a href="/archives/2015" class="archive-year">2015</a></h1>
         </div>
         <div class="post-list">
+    
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2015/05/27/数组排序/" >
+  
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2015/05/27/数组排序/"><span class="article-date">
+  2015-05-27
+</span>
+</a>
+        
+
+        
+
+      </div>
+      <div class="article-entry">
+        
+          <h1 id="数组排序"><a href="#数组排序" class="headerlink" title="数组排序"></a>数组排序</h1><blockquote>
+<pre><code>var arr = [1,3,2,4,6,5,8,67,23,13,9]
+</code></pre><hr>
+<h3 id="第一种方法：循环比较前后项"><a href="#第一种方法：循环比较前后项" class="headerlink" title="第一种方法：循环比较前后项"></a>第一种方法：循环比较前后项</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> ppp;</div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;arr.length;i++)&#123;  <span class="comment">//遍历数组中每一项</span></div><div class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> j=i+<span class="number">1</span>;j&lt;arr.length;j++)&#123;  <span class="comment">//与后面的每一项比较</span></div><div class="line">            <span class="keyword">if</span>(arr[i]&gt;arr[j])&#123;  <span class="comment">//若当前项大于后项，则调换位置</span></div><div class="line">                ppp = arr[i];</div><div class="line">                arr[i]=arr[j];</div><div class="line">                arr[j]=ppp;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"><span class="built_in">console</span>.log(arr)</div></pre></td></tr></table></figure>
+</blockquote>
+<hr>
+<h3 id="第二种方法：直接使用sort方法"><a href="#第二种方法：直接使用sort方法" class="headerlink" title="第二种方法：直接使用sort方法"></a>第二种方法：直接使用sort方法</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(arr.sort(<span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;</div><div class="line">            <span class="keyword">return</span> a-b;</div><div class="line">        &#125;))</div></pre></td></tr></table></figure>
+<ul>
+<li><p>关于sort方法</p>
+<ul>
+<li><p>如果调用该方法时没有使用参数，将按字母顺序对数组中的元素进行排序，说得更精确点，是按照字符编码的顺序进行排序。<br>要实现这一点，首先应把数组的元素都转换成字符串（如有必要），以便进行比较。</p>
+</li>
+<li><p>如果想按照其他标准进行排序，就需要提供比较函数，该函数要比较两个值，然后返回一个用于说明这两个值的相对顺序的数字。比较函数应该具有两个参数 a 和 b，其返回值如下：</p>
+<ol>
+<li>若 a 小于 b，在排序后的数组中 a 应该出现在 b 之前，则返回一个小于 0 的值。</li>
+<li>若 a 等于 b，则返回 0。</li>
+<li>若 a 大于 b，则返回一个大于 0 的值。</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="第三种方法：快速排序"><a href="#第三种方法：快速排序" class="headerlink" title="第三种方法：快速排序"></a>第三种方法：快速排序</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> quickSort = <span class="function"><span class="keyword">function</span> (<span class="params">arr</span>) </span>&#123;</div><div class="line">        <span class="comment">// 判断数组的长度，当小于等于1时返回原数组</span></div><div class="line">    <span class="keyword">if</span> (arr.length &lt;= <span class="number">1</span>) &#123; <span class="keyword">return</span> arr &#125;;</div><div class="line">        <span class="comment">// 当数组的长度大于1时</span></div><div class="line">        <span class="comment">// 取长度的平均向下取值，取出对应的中间值</span></div><div class="line">    <span class="keyword">var</span> middle = <span class="built_in">Math</span>.floor(arr.length / <span class="number">2</span>);</div><div class="line">    <span class="keyword">var</span> average = arr.splice(middle, <span class="number">1</span>)[<span class="number">0</span>];  <span class="comment">//使用splice方法取出中间值，返回取出后的数组</span></div><div class="line">        <span class="comment">// 声明两个空数组，一个用来保存小于中间值的所有值，一个用来保存大于中间值的所有值</span></div><div class="line">    <span class="keyword">var</span> smallNum = [],</div><div class="line">        bigNum = [];</div><div class="line">        <span class="comment">// 循环原数组剩余的值与中间值作比较</span></div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</div><div class="line">        <span class="keyword">if</span> (arr[i] &lt; average) &#123;</div><div class="line">                smallNum.push(arr[i])</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">                bigNum.push(arr[i])</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">        <span class="comment">// 使用递归返回最终排序结果,拼接数组</span></div><div class="line">    <span class="keyword">return</span> quickSort(smallNum).concat([average], quickSort(bigNum));</div><div class="line">&#125;</div><div class="line"> <span class="built_in">console</span>.log(quickSort(arr))</div></pre></td></tr></table></figure>
+<hr>
+<h3 id="第四种方法：利用对象自动排序-仅限于没有重复的数组"><a href="#第四种方法：利用对象自动排序-仅限于没有重复的数组" class="headerlink" title="第四种方法：利用对象自动排序(仅限于没有重复的数组)"></a>第四种方法：利用对象自动排序(仅限于没有重复的数组)</h3><p>此方法去重，排序一次完成<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> newarr = [];</div><div class="line"><span class="keyword">var</span> obj = &#123;&#125;;</div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;arr.length;i++)&#123;</div><div class="line">        obj[arr[i]]=<span class="number">1</span>;</div><div class="line">   &#125;</div><div class="line"><span class="built_in">console</span>.log(obj)</div><div class="line"><span class="keyword">for</span>(key <span class="keyword">in</span> obj)&#123;</div><div class="line">        newarr.push(key<span class="number">-0</span>)</div><div class="line">   &#125;</div><div class="line"><span class="built_in">console</span>.log(newarr)</div></pre></td></tr></table></figure></p>
+
+        
+      </div>
+    </div>
+
+  
+
+  
+  
+    
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2015/05/24/数组去重/" >
+  
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2015/05/24/数组去重/"><span class="article-date">
+  2015-05-24
+</span>
+</a>
+        
+
+        
+
+      </div>
+      <div class="article-entry">
+        
+          <h1 id="数组去重"><a href="#数组去重" class="headerlink" title="数组去重"></a>数组去重</h1><blockquote>
+<pre><code>设值一个数组 var arr = [1,45,3,5,2,5,1,6,7,3,32,25]
+</code></pre><hr>
+<h3 id="第一种方法：原数组当前项与新数组的每一项比较"><a href="#第一种方法：原数组当前项与新数组的每一项比较" class="headerlink" title="第一种方法：原数组当前项与新数组的每一项比较"></a>第一种方法：原数组当前项与新数组的每一项比较</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> newarr = [<span class="number">1</span>];  <span class="comment">//声明一个新数组用来保存新数组,先保存原数组的第一项</span></div><div class="line"><span class="comment">// 遍历数组的每一项与新数组项比较，如果不相等则保存到新数组中，若想等则跳过</span></div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;num.length;i++)&#123;</div><div class="line">    <span class="keyword">var</span> mid = num[i];</div><div class="line">    <span class="keyword">var</span> bool = <span class="literal">false</span>;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> j=<span class="number">0</span>;j&lt;newarr.length;j++)&#123;</div><div class="line">        <span class="comment">// 判断是否相等</span></div><div class="line">        <span class="keyword">if</span>(mid == newarr[j])&#123;</div><div class="line">            bool = <span class="literal">true</span>;</div><div class="line">            <span class="keyword">break</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">if</span>(!bool)&#123;</div><div class="line">        newarr.push(mid)</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(newarr)</div></pre></td></tr></table></figure>
+</blockquote>
+<hr>
+<h3 id="第二种方法：先排序，此项与后项比较，若相等跳过，不相等取出"><a href="#第二种方法：先排序，此项与后项比较，若相等跳过，不相等取出" class="headerlink" title="第二种方法：先排序，此项与后项比较，若相等跳过，不相等取出"></a>第二种方法：先排序，此项与后项比较，若相等跳过，不相等取出</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">num.sort(<span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> a-b;</div><div class="line">&#125;)</div><div class="line"><span class="keyword">var</span> newarr = [];    <span class="comment">//用来保存不重项</span></div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;num.length;i++)&#123;</div><div class="line">    <span class="keyword">if</span>(num[i]!=num[i+<span class="number">1</span>])&#123;</div><div class="line">        newarr.push(num[i])</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(newarr)</div></pre></td></tr></table></figure>
+<hr>
+<h3 id="第三种方法：利用对象的属性查询"><a href="#第三种方法：利用对象的属性查询" class="headerlink" title="第三种方法：利用对象的属性查询"></a>第三种方法：利用对象的属性查询</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> newarr = [];</div><div class="line"><span class="keyword">var</span> obj = &#123;&#125;;</div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;num.length;i++)&#123;</div><div class="line">    <span class="comment">// 将数组中的项当做key再配value保存在对象中，查询对象是否有此属性</span></div><div class="line">    <span class="comment">// 若没有则保存到数组和对象中</span></div><div class="line">    <span class="keyword">if</span>(!obj[num[i]])&#123;   <span class="comment">//判断key对应的值是否存在</span></div><div class="line">        newarr.push(num[i]);</div><div class="line">        obj[num[i]] = <span class="number">1</span>;     <span class="comment">//此处必须要求每个key对应的值是一样的</span></div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(newarr);</div><div class="line"><span class="built_in">console</span>.log(obj)</div></pre></td></tr></table></figure>
+<hr>
+<h3 id="第四种：利用索引查询"><a href="#第四种：利用索引查询" class="headerlink" title="第四种：利用索引查询"></a>第四种：利用索引查询</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> newarr = [<span class="number">1</span>];</div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;num.length;i++)&#123;</div><div class="line">    <span class="comment">// 查看项在新数组中的索引值，若为-1则表示不存在，保存到新数组中</span></div><div class="line">    <span class="keyword">if</span>(newarr.indexOf(num[i])==<span class="number">-1</span>)&#123;</div><div class="line">        newarr.push(num[i])</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(newarr)</div></pre></td></tr></table></figure>
+
+        
+      </div>
+    </div>
+
+  
+
+  
+  
     
   
 
